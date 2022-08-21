@@ -1,0 +1,35 @@
+.specialization {
+  padding-top: 0;
+}
+
+.specialization-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.specialization-item {
+  margin-right: 30px;
+}
+
+.specialization-text-box {
+  position: relative;
+
+  width: 100%;
+}
+
+.specialization-text {
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 70px;
+  background-color: #2f303acc;
+
+  @include font($fw: 700);
+  text-transform: uppercase;
+  color: var(--main-light-color);
+}

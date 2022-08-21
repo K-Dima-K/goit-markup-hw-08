@@ -1,0 +1,7 @@
+.call-text {
+  margin-bottom: 20px;
+
+  @include font($fw: 700);
+  text-transform: uppercase;
+  color: var(--main-light-color);
+}
