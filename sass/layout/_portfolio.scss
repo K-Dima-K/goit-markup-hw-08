@@ -39,14 +39,14 @@
 .portfolio {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(-1 * var(--portfolio-gap));
-  margin-bottom: calc(-1 * var(--portfolio-gap));
+  margin-right: calc(-1 * var(--gap));
+  margin-bottom: calc(-1 * var(--gap));
 }
 
 .portfolio__item {
   flex-basis: calc(100% / 3 - 30px);
-  margin-right: var(--portfolio-gap);
-  margin-bottom: var(--portfolio-gap);
+  margin-right: var(--gap);
+  margin-bottom: var(--gap);
 }
 
 .portfolio__link {
