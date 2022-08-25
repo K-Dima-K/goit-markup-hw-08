@@ -3,27 +3,29 @@
   flex-direction: column;
 }
 
-.modal-form-call-text {
-  @include font(20px, 700, 23px);
+.modal-form__call-text {
+  @include font(20px, 700, 30px);
   text-align: center;
   color: var(--primary-text-color);
   margin-bottom: 12px;
+
+  @media screen and (min-width: 1200px) {
+    @include font(20px, 700, 23px);
+  }
 }
 
-.modal-form-field {
+.modal-form__field {
   margin-bottom: 10px;
 }
 
-.modal-form-input-desc {
-  display: block;
-  font-size: 12px;
-  line-height: 1.17;
+.modal-form__input-desc {
+  @include font(12px, 400, 14px);
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
   margin-bottom: 4px;
 }
 
-.modal-form-input-wrapper {
+.modal-form__input-wrapper {
   position: relative;
   display: block;
 }
@@ -36,11 +38,11 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border-color var(--transition-dur-and-func);
-}
 
-.contact-form-input:focus {
-  outline: none;
-  border-color: var(--accent-color);
+  &:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
 }
 
 .input-icon {
@@ -50,17 +52,17 @@
   transform: translateY(-50%);
   fill: var(--primary-text-color);
   transition: fill var(--transition-dur-and-func);
+
+  .contact-form-input:focus + & {
+    fill: var(--accent-color);
+  }
 }
 
-.contact-form-input:focus + .input-icon {
-  fill: var(--accent-color);
-}
-
-.modal-form-massege-field {
+.modal-form__massege-field {
   margin-bottom: 20px;
 }
 
-.modal-form-message {
+.modal-form__message {
   display: block;
   resize: none;
   width: 100%;
@@ -68,55 +70,65 @@
   font-size: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  padding: 16px 12px;
+  padding: 12px 16px;
   transition: border-color var(--transition-dur-and-func);
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+
+  &::placeholder {
+    @include font(14px, 400, 16px);
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
+  }
 }
 
-.modal-form-message::placeholder {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-
-  color: rgba(117, 117, 117, 0.5);
-}
-
-.modal-form-message:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-.modal-form-check-desc {
+.modal-form__check-desc {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 30px;
   transition: border-color var(--transition-dur-and-func);
+
+  @media screen and (min-width: 280px) {
+    @include font(12px, 400, 14px);
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font(14px, 400, 24px);
+    justify-content: center;
+  }
+
+  &::before {
+    display: block;
+    min-width: 16px;
+    min-height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    cursor: pointer;
+    content: '';
+    margin-right: 7px;
+  }
+
+  .modal-form__checkbox:checked + &::before {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    background-image: url(../images/checkbox.svg);
+    background-size: cover;
+  }
+
+  .modal-form__checkbox:focus + &::before {
+    border-color: var(--accent-color);
+  }
 }
 
-.modal-form-check-desc-link {
+.modal-form__check-desc-link {
   color: var(--accent-color);
-}
-
-.modal-form-check-desc::before {
-  display: block;
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--primary-text-color);
-  border-radius: 2px;
-  cursor: pointer;
-  content: '';
-  margin-right: 7px;
-}
-
-.modal-form-checkbox:checked + .modal-form-check-desc::before {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  background-image: url(../images/checkbox.svg);
-  background-size: cover;
-}
-
-.modal-form-checkbox:focus + .modal-form-check-desc::before {
-  border-color: var(--accent-color);
 }
 
 .button-submit {
@@ -129,9 +141,9 @@
   border-radius: 4px;
   padding: 10px 52px;
   transition: background-color var(--transition-dur-and-func);
-}
 
-.button-submit:hover,
-.button-submit:focus {
-  background-color: var(--button-hover-color);
+  &:hover,
+  &:focus {
+    background-color: var(--button-hover-color);
+  }
 }

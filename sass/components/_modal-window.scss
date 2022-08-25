@@ -1,18 +1,39 @@
+// @media screen and (min-width: 768px) {
+//   .modal {
+//     max-width: 100%;
+//   }
+// }
+
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 40px;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
-.modal-close-button {
+.modal__close-button {
   position: absolute;
   display: flex;
   top: 8px;
@@ -26,19 +47,19 @@
   border-radius: 50%;
   padding: 0;
   transition: border-color var(--transition-dur-and-func);
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
 }
 
-.modal-close-button:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-.modal-close-icon {
+.modal__close-icon {
   fill: var(--main-dark-color);
   transition: fill var(--transition-dur-and-func);
-}
 
-.modal-close-button:hover .modal-close-icon,
-.modal-close-button:focus .modal-close-icon {
-  fill: var(--accent-color);
+  .modal__close-button:hover &,
+  .modal__close-button:focus & {
+    fill: var(--accent-color);
+  }
 }
