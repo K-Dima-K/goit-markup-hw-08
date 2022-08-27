@@ -28,6 +28,13 @@
 
     height: 100%;
     position: relative;
+
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      padding-top: 38px;
+      padding-bottom: 38px;
+      padding-left: 20px;
+    }
+
     padding-top: 48px;
     padding-bottom: 48px;
     padding-left: 40px;
@@ -56,11 +63,18 @@
   }
 
   .mobile-menu__nav-item:not(:last-child) {
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      margin-bottom: 18px;
+    }
     margin-bottom: 32px;
   }
 
   .mobile-menu__nav-link {
     @include font(40px, 500, 47px);
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      font-size: 32px;
+    }
+
     letter-spacing: 0.02em;
 
     color: var(--primary-text-color);
@@ -73,15 +87,24 @@
   }
 
   .mobile-menu__contacts {
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      margin-bottom: 48px;
+    }
     margin-bottom: 64px;
   }
 
   .mobile-menu__contacts-item:not(:last-child) {
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      margin-bottom: 20px;
+    }
     margin-bottom: 32px;
   }
 
   .mobile-menu__phone-link {
     @include font(34px, 500, 40px);
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      font-size: 28px;
+    }
     letter-spacing: 0.02em;
 
     color: var(--accent-color);
@@ -89,6 +112,9 @@
 
   .mobile-menu__mail-link {
     @include font(24px, 500, 28px);
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      font-size: 20px;
+    }
     letter-spacing: 0.02em;
 
     color: var(--secondary-text-color);
@@ -104,6 +130,10 @@
     &:not(:last-child)::after {
       margin-left: 10px;
       margin-right: 10px;
+      @media screen and (min-width: 320px) and (max-width: 477px) {
+        margin-left: 8px;
+        margin-right: 8px;
+      }
       content: '';
       width: 22px;
       height: 0px;
@@ -113,6 +143,9 @@
 
   .social-media__link {
     @include font(18px, 500, 22px);
+    @media screen and (min-width: 320px) and (max-width: 477px) {
+      font-size: 14px;
+    }
     letter-spacing: 0.02em;
     color: var(--accent-color);
   }
